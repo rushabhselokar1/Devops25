@@ -1,0 +1,10 @@
+- name: template hosting playbook
+  hosts: all 
+  become: yes
+  tasks:
+      - name: installing package
+        ansible.buildin.package:
+        state: present
+        name: tree
+
+        
