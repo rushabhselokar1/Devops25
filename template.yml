@@ -3,9 +3,10 @@
   become: yes
   tasks:
       - name: installing package
-        ansible.buildin.package:
-        state: present
-        name: tree
-        
+        dnf:
+      - name:
+         - tree
+        state: present     
+
 
         
