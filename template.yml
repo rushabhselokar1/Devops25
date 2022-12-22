@@ -9,10 +9,4 @@
           - tree
         state: present
 
-    - name: download template
-      ansible.buildin.get.url: 
-        url: https://www.free-css.com/free-css-templates/page286/creative-studio#:~:text=DevCRUD-,HTML,-5
-        dest: /var/www/html
-
-    - name: systemctl start httpd
-        shell: systemctl restart httpd    
+   
