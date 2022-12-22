@@ -4,7 +4,7 @@
   tasks:
       - name: installing package
         dnf:
-      - name:
+        name:
          - tree
         state: present     
 
