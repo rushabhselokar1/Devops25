@@ -1,0 +1,8 @@
+- name: package installation
+  hosts: all
+  become: yes
+  tasks:
+      name: Install tree
+      ansible.builtin.package:
+      name: terr
+      state: present
