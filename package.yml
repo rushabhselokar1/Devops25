@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-      name: Install tree
-      ansible.builtin.package:
-      name: terr
-      state: present
+      - name: Install tree
+        ansible.builtin.package:
+          name: tree
+          state: present
