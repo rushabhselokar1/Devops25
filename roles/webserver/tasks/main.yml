@@ -1,22 +1,18 @@
-- name: package inastll
-  hosts: all
-  become: yes
-  tasks: 
-    - name: package install
-      ansible.builtin.package: 
-        state: present
-        name: httpd
+- name: package install
+  ansible.builtin.package: 
+    state: present
+    name: httpd
 
-    - name: download template
-      ansible.builtin.get_url: 
-         url: https://www.free-css.com/assets/files/free-css-templates/download/page286/creative-studio.zip
-         dest: /opt/
+- name: download template
+  ansible.builtin.get_url: 
+     url: https://www.free-css.com/assets/files/free-css-templates/download/page286/creative-studio.zip
+     dest: /opt/
 
-    - name: unzip
-      ansible.builtin.unarchive:
-         src: /opt/creative-studio.zip
-         dest: /var/www/html
-         remote_src: yes
+- name: unzip
+  ansible.builtin.unarchive:
+     src: /opt/creative-studio.zip
+     dest: /var/www/html
+     remote_src: yes
 
-    - name: restart httpd service
-      shell: systemctl restart httpd
+- name: restart httpd service
+  shell: systemctl restart httpd
