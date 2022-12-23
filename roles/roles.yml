@@ -1,7 +1,7 @@
 - name: playbook for webserver
   hosts: all
   become: yes
-  tasks: 
+  roles: 
    - webserver
-   - appserver
+  # - appserver
     
