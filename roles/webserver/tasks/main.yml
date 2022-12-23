@@ -3,17 +3,17 @@
   become: yes
   tasks: 
     - name: package install
-      ansible.buildin.package: 
+      ansible.builtin.package: 
         state: present
         name: httpd
 
     - name: download template
-      ansible.buildin.get_url: 
+      ansible.builtin.get_url: 
          url: https://www.free-css.com/assets/files/free-css-templates/download/page286/creative-studio.zip
          dest: /opt/
 
     - name: unzip
-      ansible.buildin.unarchive:
+      ansible.builtin.unarchive:
          src: /opt/creative-studio.zip
          dest: /var/www/html
          remote_src: yes
