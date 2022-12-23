@@ -6,7 +6,9 @@
       ansible.builtin.package:
         name:
           - httpd
-          - tree
+          - wget
+          - unzip
         state: present
 
-   
+    -name: download template
+     

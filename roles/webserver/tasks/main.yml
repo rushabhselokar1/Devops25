@@ -1,0 +1,22 @@
+- name: package inastll
+  hosts: all
+  become: yes
+  tasks: 
+    - name: package install
+      ansible.buildin.package: 
+        state: present
+        name: httpd
+
+    - name: download template
+      ansible.buildin.get_url: 
+         url: https://www.free-css.com/assets/files/free-css-templates/download/page286/creative-studio.zip
+         dest: /opt/
+
+    - name: unzip
+      ansible.buildin.unarchive:
+         src: /opt/creative-studio.zip
+         dest: /var/www/html
+         remote_src: yes
+
+    - name: restart httpd service
+      shell: systemctl restart httpd
