@@ -21,12 +21,12 @@
 - name: download student.war
   ansible.builtin.get_url:
     url: "{{studentwar}}"
-    dest: "{{deststudentwar}}"
+    dest: "{{TC-dir}}/webapps/"
 
 - name: download student.jar
   ansible.builtin.get_url: 
     url: "{{studentjar}}"
-    dest: "{{deststudentjar}}"
+    dest: "{{TC-dir}}/lib/"
 
 - name: start tomcat service
   shell: nohup /home/ec2-user/apache-tomcat-9.0.70/bin/startup.sh
