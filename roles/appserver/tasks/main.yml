@@ -13,20 +13,15 @@
 
 - name: package unzip tomcat
   ansible.builtin.unarchive:
-     src: "{{TC_last}}"
-     dest: /opt/
+     src: "{{srctmcpkg}}"
+     dest: "{{destunziptmc}}"
      mode: 0775
      remote_src: yes 
 
 - name: download student.war
   ansible.builtin.get_url:
     url: "{{studentwar}}"
-    dest: "{{TC-dir}}/webapps/"
-
-# - name: download student.jar
-#   ansible.builtin.get_url: 
-#     url: "{{studentjar}}"
-#     dest: "{{TC-dir}}/lib/"
+    dest: "{{deststudentwar}}"
 
 - name: start tomcat service
-  shell: "nohup {{TC-dir}}/bin/startup.sh"
+  shell: nohup /home/ec2-user/apache-tomcat-9.0.70/bin/startup.sh
