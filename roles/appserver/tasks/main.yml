@@ -23,10 +23,10 @@
     url: "{{studentwar}}"
     dest: "{{TC-dir}}/webapps/"
 
-- name: download student.jar
-  ansible.builtin.get_url: 
-    url: "{{studentjar}}"
-    dest: "{{TC-dir}}/lib/"
+# - name: download student.jar
+#   ansible.builtin.get_url: 
+#     url: "{{studentjar}}"
+#     dest: "{{TC-dir}}/lib/"
 
 - name: start tomcat service
   shell: "nohup {{TC-dir}}/bin/startup.sh"
