@@ -18,7 +18,7 @@
      mode: 0775
      remote_src: yes 
 
-- name: download student war file
+- name: download student.war
   ansible.builtin.get_url:
     url: "{{studentwar}}"
     dest: "{{deststudentwar}}"
