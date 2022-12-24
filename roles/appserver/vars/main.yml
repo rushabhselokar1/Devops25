@@ -1,8 +1,8 @@
 pkg: java*
 tmcurl: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz
 desttomcat: /home/ec2-user
-studentwar: https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war
-studentjar: https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar
+studentwar: https://s3-ap-south-1.amazonaws.com/studentapi-cit/student.war
+studentjar: https://s3-ap-south-1.amazonaws.com/studentapi-cit/mysql-connector.jar
 
 tomcat_dir: nohup /home/ec2-user/"{{tomcatdir}}"/bin/catalina.sh start
 TC_last: "/opt/{{tmcurl.split ('/') | last}}"
