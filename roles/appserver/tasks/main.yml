@@ -13,8 +13,8 @@
 
 - name: package unzip tomcat
   ansible.builtin.unarchive:
-     src: "{{zippkg}}"
-     dest: "{{desttomcat}}"
+     src: "{{TC_last}}"
+     dest: /opt/
      mode: 0775
      remote_src: yes 
 
@@ -29,4 +29,4 @@
     dest: "{{TC-dir}}/lib/"
 
 - name: start tomcat service
-  shell: nohup /home/ec2-user/apache-tomcat-9.0.70/bin/startup.sh
+  shell: "nohup {{TC-dir}}/bin/startup.sh"
