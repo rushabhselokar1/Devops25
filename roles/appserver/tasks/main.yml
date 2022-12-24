@@ -1,0 +1,27 @@
+- name: package installation java
+  ansible.builtin.package:
+    state: present
+    name: "{{pkg}}"
+
+- name: package update
+  shell: yum update -y
+
+- name: package download tomcat
+  ansible.builtin.get_url:
+     url: "{{tmcurl}}"
+     dest: /opt/
+
+- name: package unzip tomcat
+  ansible.builtin.unarchive:
+     src: "{{zippkg}}"
+     dest: "{{desttomcat}}"
+     mode: 0775
+     remote_src: yes 
+
+- name: download student.war
+  ansible.builtin.get_url:
+    url: "{{studentwar}}"
+    dest: "{{deststudentwar}}"
+
+- name: start tomcat service
+  shell: nohup /home/ec2-user/apache-tomcat-9.0.70/bin/startup.sh
